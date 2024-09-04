@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="POST" enctype="multipart/form-data" autocomplete="off">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" required>
+            <br>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" required>
+            <br>
+
+            <label for="middle_name">Middle Name (Optional):</label>
+            <input type="text" name="middle_name" id="middle_name">
+            <br>
+
+            <label for="display_name">Display Name:</label>
+            <input type="text" name="display_name" id="display_name" required>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+
+            <label for="relationship_status">Are you in a relationship?</label>
+            <select name="relationship_status" id="relationship_status">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <br>
+
+            <div id="partner_nick_div" style="display:none;">
+                <label for="partner_nick">Partner's Nickname:</label>
+                <input type="text" name="partner_nick" id="partner_nick">
+                <br>
+            </div>
+
+            <label for="profile_picture">Upload your picture:</label>
+            <input type="file" name="profile_picture" id="profile_picture" accept="image/*" required>
+            <br>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+        {% for message in get_flashed_messages(with_categories=true) %}
+        <p class="alert">{{ message[1] }}</p>
+        {% endfor %}
+    </div>
+
+    <script>
+        const relationshipStatus = document.getElementById('relationship_status');
+        const partnerNickDiv = document.getElementById('partner_nick_div');
+
+        relationshipStatus.addEventListener('change', function () {
+            if (this.value === 'yes') {
+                partnerNickDiv.style.display = 'block';
+            } else {
+                partnerNickDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

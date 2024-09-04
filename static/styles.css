@@ -1,0 +1,81 @@
+/* Общие стили для всего сайта */
+body {
+    background-image: url('/static/images/party.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Изображение покрывает весь экран */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-attachment: fixed; /* Фон остается на месте при прокрутке */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Общий шрифт для текста */
+    color: #ffffff; /* Белый цвет текста по умолчанию */
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+
+/* Контейнер для формы */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон для контейнера */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Тень для создания объема */
+    width: 100%;
+    max-width: 400px;
+    text-align: center; /* Центрирование текста внутри контейнера */
+}
+
+/* Стили для заголовков */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Стили для полей ввода */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Стили для кнопок */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00bfff; /* Голубая кнопка */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавное изменение фона при наведении */
+}
+
+button:hover {
+    background-color: #009acd; /* Более темный оттенок синего при наведении */
+}
+
+/* Дополнительные стили для ссылок */
+a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для сообщений об ошибках */
+.flash-message {
+    background-color: #ff4c4c; /* Красный фон для ошибок */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}

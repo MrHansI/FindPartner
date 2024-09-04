@@ -1,0 +1,20 @@
+mypartnerproject/
+│
+├── app.py
+├── templates/
+│   ├── login.html
+│   ├── register.html
+│   └── home.html
+├── static/
+│   └── styles.css
+│   └── images / 
+│		└── party.jpg
+│   └── uploads
+├── instance/
+│     └── your_database.db
+├── models.py
+├── migrations
+├── findface.py
+├── faces
+├── config.py
+└── users.db
